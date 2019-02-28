@@ -92,3 +92,6 @@ gem 'devise'
 # gem 'enum'
 # and change language system
 # gem 'enum_help'
+
+# Use rails-console
+gem 'rb-readline'

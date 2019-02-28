@@ -28,7 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
+
+# Use Image system
+gem 'carrierwave'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -60,3 +63,32 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Use haml gems
+gem 'haml-rails'
+gem 'erb2haml'
+
+# Use Jquery gems
+gem 'jquery-rails'
+
+# Use pagination system
+gem 'kaminari'
+
+# User login system
+gem 'devise'
+# and lobot check system
+# gem "recaptcha", require: "recaptcha/rails"
+
+# Use font-awesome
+# gem 'font-awesome-rails'
+
+# Amazon Web Server sytem
+# gem 'fog-aws'
+
+# Use breadcrumb list
+# gem 'gretel'
+
+# math text system
+# gem 'enum'
+# and change language system
+# gem 'enum_help'

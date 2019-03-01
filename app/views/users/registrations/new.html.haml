@@ -7,7 +7,7 @@
         .new-user__error--message
           = message
   .new-user__form
-    = form_with(model: User.new, as: :user, url: registration_path(:user), local: true) do |f|
+    = form_with(model: @user, url: registration_path(@user), local: true) do |f|
       .field
         .field__label
           = f.label :username

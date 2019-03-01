@@ -1,5 +1,17 @@
 // reset.css
 @import "reset";
 
+// settingfiles
+@import "config/page";
+
+// mixin article area
+@import "mixin/article";
+
 // map area settings
 @import "modules/map";
+
+// whole settings
+@import "modules/routes/whole";
+
+// route index
+@import "modules/routes/index";

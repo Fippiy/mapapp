@@ -1,25 +1,32 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :username
-    %br/
-    = f.text_field :username, autofocus: true, autocomplete: "username"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "users/shared/links"
+.new-user
+  .new-user__header
+    %h2 新規登録
+    %span 必要情報を入力してください。
+    .new-user__error
+      - @user.errors.full_messages.each do |message|
+        .new-user__error--message
+          = message
+  .new-user__form
+    = form_with(model: User.new, as: :user, url: registration_path(:user), local: true) do |f|
+      .field
+        .field__label
+          = f.label :username
+        .field__input
+          = f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "入力必須"
+      .field
+        .field__label
+          = f.label :email
+        .field__input
+          = f.email_field :email, autocomplete: "email", placeholder: "入力必須"
+      .field
+        .field__label
+          = f.label :password
+        .field__input
+          = f.password_field :password, autocomplete: "new-password", placeholder: "入力必須(6文字以上)"
+      .field
+        .field__label
+          = f.label :password_confirmation
+        .field__input
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "入力必須"
+      .field
+        = f.submit "登録する", class: "field__submit"

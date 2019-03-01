@@ -36,8 +36,12 @@
       .head-status {
         display: flex;
         &__user-nav {
+          form {
+            display: flex;
+          }
           &--input {
             width: 225px;
+            margin-right: 5px;
           }
           &--btn {
             text-decoration: none;

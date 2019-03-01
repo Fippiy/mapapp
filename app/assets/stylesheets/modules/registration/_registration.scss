@@ -46,6 +46,15 @@
           font-size: 16px;
         }
       }
+      &__alert {
+        width: 100%;
+        .here {
+          color: red;
+        }
+        .no_here {
+          color: blue;
+        }
+      }
       &__submit {
         width: 100px;
         height: 30px;

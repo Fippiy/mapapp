@@ -4,20 +4,17 @@
   background: $back_color;
   width: 100%;
   height: $header_height;
+  padding-top: 5px;
   &__area {
     height: 100%;
     max-width: $header_width;
     margin: 0 auto;
     display: flex;
     &--logo {
-      // float: left;
-      // flex-direction: row;
       width: $header_width_logo;
       height: 100%;
     }
     &--right {
-      // float: left;
-      // flex-direction: row;
       height: 100%;
       width: 0 auto;
       width: calc(#{$header_width} - #{$header_width_logo});
@@ -26,24 +23,31 @@
         height: calc(100% / 3);
       }
       .head-title {
+        font-size: 20px;
       }
       .head-search {
         input {
-          width: calc(#{$header_width} - #{$header_width_logo} - 20px);
-          height: calc(100% - 5px);
+          text-decoration: none;
+          border: none;
+          width: 100%;
+          height: 80%;
         }
       }
       .head-status {
         display: flex;
-        &__user {
-          // float: left;
-          // flex-direction: row;
-          width: 50%;
-        }
-        &__login {
-          // flex-direction: row;
-          // width: 50%;
-          // float: left;
+        &__user-nav {
+          &--input {
+            width: 225px;
+          }
+          &--btn {
+            text-decoration: none;
+            line-height: 100%;
+            background: black;
+            color: white;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 10px;
+          }
         }
       }
     }

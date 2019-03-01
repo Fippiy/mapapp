@@ -95,3 +95,6 @@ gem 'devise'
 
 # Use rails-console
 gem 'rb-readline'
+
+# Use binding.pry
+gem 'pry-rails'

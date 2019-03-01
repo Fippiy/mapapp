@@ -70,6 +70,7 @@ gem 'erb2haml'
 
 # Use Jquery gems
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 
 # Use pagination system
 gem 'kaminari'

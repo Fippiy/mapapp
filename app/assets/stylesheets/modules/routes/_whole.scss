@@ -1,0 +1,60 @@
+.route-header {
+  position: fixed;
+  z-index: 10;
+  background: $back_color;
+  width: 100%;
+  height: $header_height;
+  &__area {
+    height: 100%;
+    max-width: $header_width;
+    margin: 0 auto;
+    display: flex;
+    &--logo {
+      // float: left;
+      // flex-direction: row;
+      width: $header_width_logo;
+      height: 100%;
+    }
+    &--right {
+      // float: left;
+      // flex-direction: row;
+      height: 100%;
+      width: 0 auto;
+      width: calc(#{$header_width} - #{$header_width_logo});
+      text-align: center;
+      > div {
+        height: calc(100% / 3);
+      }
+      .head-title {
+      }
+      .head-search {
+        input {
+          width: calc(#{$header_width} - #{$header_width_logo} - 20px);
+          height: calc(100% - 5px);
+        }
+      }
+      .head-status {
+        display: flex;
+        &__user {
+          // float: left;
+          // flex-direction: row;
+          width: 50%;
+        }
+        &__login {
+          // flex-direction: row;
+          // width: 50%;
+          // float: left;
+        }
+      }
+    }
+  }
+}
+.yield-area {
+  // height: 800px; // test
+  padding-top: $header_height;
+}
+.route-footer {
+  width: 100%;
+  height: 200px;
+  background: black;
+}

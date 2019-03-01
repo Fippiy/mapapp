@@ -1,0 +1,87 @@
+// article 高さ(box単位)、横幅(全体)、間隔、横要素数、情報枠比(1/n)、全体(文字色、背景色)、情報枠(文字色、背景色)
+@mixin article($height, $width, $interval, $block, $info, $color, $back, $infocolor, $infoback) {
+  .article-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: $width;
+    height: 100%;
+    padding-bottom: 30px;
+    &__box {
+      $margin: calc(#{$interval} * (#{$block} - 1));
+      width: calc((#{$width} - #{$margin}) / #{$block});
+      height: $height;
+      color: $color;
+      background: $back;
+      &:not(:nth-child(#{$block + n - ($block - 1)})) {
+        margin-left: $interval;
+      }
+      &:nth-child(n + #{$block + 1}) {
+        margin-top: $interval;
+      }
+      &--image {
+        height: calc(#{$height / $info * ($info - 1)});
+        .no_image {
+          font-size: 20px;
+          text-align: center;
+          line-height: calc(#{$height / $info * ($info - 1)});
+        }
+      }
+      &--info {
+        height: calc(#{$height / $info});
+        color: $infocolor;
+        background: $infoback;
+        h2 {
+          line-height: calc(#{$height / $info});
+          text-align: center;
+          font-size: 20px;
+        }
+      }
+      &--cut {
+        position: absolute;
+        .cut-box {
+          overflow: hidden;
+          position: absolute;
+          background: $back;
+          width: 50px;
+          height: 50px;
+          left: 30px;
+          &__left {
+            &:before {
+              content: '';
+              position: absolute;
+              top: -30px;
+              left: -40px;
+              width: 100px;
+              height: 100px;
+              background: $back_color_index;
+              -webkit-transform-origin: left center;
+              -ms-transform-origin: left center;
+              transform-origin: left center;
+              -webkit-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+            }
+          }
+          &__right {
+            &:before {
+              content: '';
+              position: absolute;
+              top: -90px;
+              left: 30px;
+              width: 100px;
+              height: 100px;
+              background: $back_color_index;
+              -webkit-transform-origin: left center;
+              -ms-transform-origin: left center;
+              transform-origin: left center;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

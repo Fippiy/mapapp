@@ -9,4 +9,22 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script{src: ENV["GOOGLE_MAP_ADDRESS"]}
   %body
-    = yield
+    %header.route-header
+      .route-header__area
+        .route-header__area--logo
+          img
+        .route-header__area--right
+          .head-title
+            title
+          .head-search
+            %input
+          .head-status
+            .head-status__user
+              status
+            .head-status__login
+              login
+              new
+    .yield-area
+      = yield
+    %footer.route-footer
+      .route-footer__area

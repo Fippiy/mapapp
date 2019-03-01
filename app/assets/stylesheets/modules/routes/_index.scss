@@ -1,0 +1,14 @@
+.route-index-body {
+  height: 100%;
+  background-color: #BDD8E6;
+  & h1 {
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0;
+  }
+  &__area {
+    height: 100%;
+    // article 高さ(box単位)、横幅(全体)、間隔、横要素数、情報枠比(1/n)、全体(文字色、背景色)、情報枠(文字色、背景色)
+    @include article(300px, 900px, 15px, 3, 6, black, #ffff80, black, white);
+  }
+}

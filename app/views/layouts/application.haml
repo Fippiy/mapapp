@@ -12,18 +12,23 @@
     %header.route-header
       .route-header__area
         .route-header__area--logo
-          img
+          = link_to "Img", root_path
         .route-header__area--right
           .head-title
             title
           .head-search
             %input
           .head-status
-            .head-status__user
-              status
-            .head-status__login
-              login
-              new
+            - if user_signed_in?
+              .head-status__user-nav
+                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "head-status__user-nav--btn"
+            - else
+              .head-status__user-nav
+                = form_with(model: User.new, as: :user, url: session_path(:user), local: true) do |f|
+                  = f.text_field :username, autofocus: true, placeholder: "ユーザー名", class: "head-status__user-nav--input"
+                  = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "head-status__user-nav--input"
+                  = f.submit("ログイン", class: "head-status__user-nav--btn")
+                  = link_to "新規登録", new_user_registration_path, class: "head-status__user-nav--btn"
     .yield-area
       = yield
     %footer.route-footer

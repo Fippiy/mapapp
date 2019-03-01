@@ -21,6 +21,7 @@
           .head-status
             - if user_signed_in?
               .head-status__user-nav
+                user-info-texts
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "head-status__user-nav--btn"
             - else
               .head-status__user-nav

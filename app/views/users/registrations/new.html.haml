@@ -1,3 +1,4 @@
+= javascript_include_tag 'user-search', 'data-turbolinks-track': 'reload'
 .new-user
   .new-user__header
     %h2 新規登録
@@ -26,13 +27,13 @@
         .field__label
           = f.label :password
         .field__input
-          = f.password_field :password, autocomplete: "new-password", placeholder: "入力必須(6文字以上)"
+          = f.password_field :password, autocomplete: "new-password", placeholder: "入力必須(6文字以上)", autocomplete: "off",id: "registration_password"
       .field
       .field
         .field__label
           = f.label :password_confirmation
         .field__input
-          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "入力必須"
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "入力必須", autocomplete: "off"
       .field
       .field
         = f.submit "登録する", class: "field__submit"

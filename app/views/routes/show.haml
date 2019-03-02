@@ -1,0 +1,24 @@
+= javascript_include_tag 'googlemap', 'data-turbolinks-track': 'reload'
+%script{src: ENV["GOOGLE_MAP_ADDRESS"]}
+.article-detail
+  .article-detail__header
+    .article-detail__header--title
+      %h1 title
+  .article-detail__body
+    .article-detail__body--left
+      .detail-info
+        %h2
+          UserName:
+          = @route.user.username
+      .detail-photo
+        - if @route.route_photos.length > 0
+          .detail-photo__photo
+            = image_tag(@route.route_photos.first.photo)
+        - else
+          .detail-photo__no-photo
+            no_image
+      .detail-map
+        #map
+    .article-detail__body--right
+      .detail-description
+        = @route.description

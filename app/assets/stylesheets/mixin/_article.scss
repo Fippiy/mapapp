@@ -25,7 +25,7 @@
       &--image {
         height: calc(#{$height / $info * ($info - 1)});
         width: calc((#{$width} - #{$margin}) / #{$block});
-        // margin: 0 auto;
+        text-align: center;
         img {
           height: calc(#{$height / $info * ($info - 1)});
         }

@@ -4,5 +4,6 @@ class RoutesController < ApplicationController
   end
 
   def show
+    @route = Route.find(params[:id])
   end
 end

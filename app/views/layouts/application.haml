@@ -26,7 +26,7 @@
               .head-status__user-nav
                 = form_with(model: @user, url: session_path(@user), local: true) do |f|
                   = f.text_field :username, autofocus: true, placeholder: "ユーザー名", class: "head-status__user-nav--input"
-                  = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "head-status__user-nav--input"
+                  = f.password_field :password, placeholder: "パスワード", class: "head-status__user-nav--input", autocomplete: "off"
                   = f.submit("ログイン", class: "head-status__user-nav--btn")
                   = link_to "新規登録", new_user_registration_path, class: "head-status__user-nav--btn"
     .yield-area

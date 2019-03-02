@@ -1,5 +1,5 @@
 class RoutesController < ApplicationController
   def index
-    @routes = Route.order("updated_at DESC")
+    @routes = Route.page(params[:page]).per(21).order("updated_at DESC")
   end
 end

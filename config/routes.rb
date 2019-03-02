@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'routes#index'
   resources :maps, only: [:index]
-  resources :routes, only: [:index]
+  resources :routes, only: [:index, :show]
   resources :users do
     collection do
       get "search"

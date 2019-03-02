@@ -1,0 +1,38 @@
+.new-user
+  .new-user__header
+    %h2 新規登録
+    %span 必要情報を入力してください。
+    .new-user__error
+      - @user.errors.full_messages.each do |message|
+        .new-user__error--message
+          = message
+  .new-user__form
+    = form_with(model: @user, url: registration_path(@user), local: true) do |f|
+      .field
+        .field__label
+          = f.label :username
+        .field__input
+          = f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "入力必須",id: "username"
+      .field
+        .field__label
+        .field__alert#username-answer
+      .field
+        .field__label
+          = f.label :email
+        .field__input
+          = f.email_field :email, autocomplete: "email", placeholder: "入力必須"
+      .field
+      .field
+        .field__label
+          = f.label :password
+        .field__input
+          = f.password_field :password, autocomplete: "new-password", placeholder: "入力必須(6文字以上)"
+      .field
+      .field
+        .field__label
+          = f.label :password_confirmation
+        .field__input
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "入力必須"
+      .field
+      .field
+        = f.submit "登録する", class: "field__submit"

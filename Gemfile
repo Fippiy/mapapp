@@ -70,6 +70,7 @@ gem 'erb2haml'
 
 # Use Jquery gems
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 
 # Use pagination system
 gem 'kaminari'
@@ -95,3 +96,6 @@ gem 'devise'
 
 # Use rails-console
 gem 'rb-readline'
+
+# Use binding.pry
+gem 'pry-rails'

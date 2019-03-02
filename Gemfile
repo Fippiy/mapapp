@@ -99,3 +99,6 @@ gem 'rb-readline'
 
 # Use binding.pry
 gem 'pry-rails'
+
+# Use random value
+gem 'faker'

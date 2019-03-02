@@ -3,4 +3,4 @@
     %h1
       index_title
     .article-area
-      = render "article"
+      = render partial: "article", collection: @routes, as: "article"

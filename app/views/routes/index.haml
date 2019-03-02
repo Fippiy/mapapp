@@ -4,3 +4,4 @@
       index_title
     .article-area
       = render partial: "article", collection: @routes, as: "article"
+= paginate(@routes)

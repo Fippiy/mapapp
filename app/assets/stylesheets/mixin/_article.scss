@@ -1,6 +1,9 @@
 // article 高さ(box単位)、横幅(全体)、間隔、横要素数、情報枠比(1/n)、全体(文字色、背景色)、情報枠(文字色、背景色)
 @mixin article($height, $width, $interval, $block, $info, $color, $back, $infocolor, $infoback) {
   .article-area {
+    a {
+      text-decoration: none;
+    }
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -21,7 +24,12 @@
       }
       &--image {
         height: calc(#{$height / $info * ($info - 1)});
-        .no_image {
+        width: calc((#{$width} - #{$margin}) / #{$block});
+        // margin: 0 auto;
+        img {
+          height: calc(#{$height / $info * ($info - 1)});
+        }
+        .no-image {
           font-size: 20px;
           text-align: center;
           line-height: calc(#{$height / $info * ($info - 1)});

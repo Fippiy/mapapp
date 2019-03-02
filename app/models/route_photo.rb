@@ -1,0 +1,2 @@
+class RoutePhoto < ApplicationRecord
+end

@@ -29,16 +29,6 @@
           padding: 10px;
         }
       }
-      .detail-photo {
-        overflow: hidden;
-        h2 {
-          padding: 10px;
-        }
-        img {
-          height: 100%;
-          width: 100%;
-        }
-      }
       .detail-map {
         overflow: hidden;
         height: 200px;
@@ -47,7 +37,7 @@
     &--right {
       width: 100%;
       height: 100%;
-      .detail-description {
+      & > div {
         border-radius: 30px;
         margin: 20px auto;
         height: 500px;
@@ -55,6 +45,21 @@
         border: 1px solid black;
         background: #ffff80;
         overflow: auto;
+      }
+      .detail-photo {
+        overflow: hidden;
+        text-align:center;
+        &__photo {
+          height: 100%;
+          width: 100%;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+      .detail-description {
       }
     }
   }

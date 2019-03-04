@@ -28,6 +28,7 @@
         text-align: center;
         img {
           height: calc(#{$height / $info * ($info - 1)});
+          object-fit: contain;
         }
         .no-image {
           font-size: 20px;

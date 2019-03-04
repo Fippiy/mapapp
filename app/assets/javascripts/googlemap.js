@@ -1,7 +1,7 @@
 $(function(){
   var MyLatLng = new google.maps.LatLng(34.6767339, 135.5052481);
   var Options = {
-   zoom: 15,
+   zoom: 13,
    center: MyLatLng,
    mapTypeId: 'roadmap'
   };

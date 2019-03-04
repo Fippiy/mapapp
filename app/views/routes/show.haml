@@ -7,9 +7,16 @@
   .article-detail__body
     .article-detail__body--left
       .detail-info
-        %h2
+        %h2 UserInfo
+        .span
           UserName:
           = @route.user.username
+        - for num in 1..10 do
+          .span
+            データ
+      .detail-map
+        #map
+    .article-detail__body--right
       .detail-photo
         - if @route.route_photos.length > 0
           .detail-photo__photo
@@ -17,8 +24,7 @@
         - else
           .detail-photo__no-photo
             no_image
-      .detail-map
-        #map
-    .article-detail__body--right
       .detail-description
         = @route.description
+      .detail-route
+        ルート表示
